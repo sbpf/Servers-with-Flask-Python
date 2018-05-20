@@ -6,8 +6,10 @@
 {%for i in items%}
 <div>
   <p>{{i.name}}</p>
-  <p>{{i.price}}</p>
-  <p>{{i.description}}</p>
+  {{i.price}}</br>
+  {{i.description}}</br>
+  <a href = editUrl >edit</a></br>
+  <a href = deleteUrl>delete</a>
 </div>
 {%endfor%}
 
