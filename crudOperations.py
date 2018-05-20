@@ -18,7 +18,9 @@ def displayFirstRestaurant():
 
     output = ''
     for i in items:
-        output += i.name
+        output += i.name + '</br>'
+        output += i.price + '</br>'
+        output += i.description + '</br>'
         output += '</br>'
     return output    
 
