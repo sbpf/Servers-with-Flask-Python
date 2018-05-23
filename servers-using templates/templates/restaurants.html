@@ -1,0 +1,16 @@
+<html>
+<head>
+  <link rel = stylesheet type = text/css href = {{url_for('static', filename = 'style.css')}}>
+</head>
+<body>
+<h1>Welcome</h1>
+<h2>Choose a restaurant to view menu options</h2>
+
+{%for restaurant in restaurants%}
+<p style = "align:center;">
+  <a href = '{{url_for('restaurantMenu', restaurant_id = restaurant.id)}}'>{{restaurant.name}}</a></br>
+</p>
+{%endfor%}
+
+</body>
+</html>

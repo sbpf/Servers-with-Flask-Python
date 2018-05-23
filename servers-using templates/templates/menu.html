@@ -1,17 +1,36 @@
 <html>
+<head>
+  <link rel = stylesheet type = text/css href = {{url_for('static', filename = 'style.css')}}>
+</head>
 <body>
 
 <h1>{{restaurant.name}}</h1>
-<a href = '{{url_for('addNewMenuItem', restaurant_id = restaurant.id)}}'>Create a new menu item</a></br>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+      <li><strong>{{message}}</strong></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+<div style = "align:center; text-align:center;">
+  <a href = '{{url_for('addNewMenuItem', restaurant_id = restaurant.id)}}'>Create a new menu item</a></br>
+</div>
+
 {%for i in items%}
-<div>
+<div style = "align:center; text-align:center;">
   <p>{{i.name}}
   {{i.price}}</br>
   {{i.description}}</br></p>
-  <a href = '{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = i.id)}}'>Edit</a></br>
-  <a href = '{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id)}}'>Delete</a>
+  <a  href = '{{url_for('editMenuItem', restaurant_id = restaurant.id, menu_id = i.id)}}'>Edit</a>
+  <a  href = '{{url_for('deleteMenuItem', restaurant_id = restaurant.id, menu_id = i.id)}}'>Delete</a>
 </div>
 {%endfor%}
+<div style = "align:center; text-align:center;">
+  <a href = '{{url_for('restaurants')}}'>Go back to view all restaurants</a></br>
+</div>
 
 </body>
 </html>

@@ -1,20 +1,23 @@
 <html>
 <body>
-
+  <head>
+    <link rel = stylesheet type = text/css href = {{url_for('static', filename = 'style.css')}}>
+  </head>
 
 <h2>Add a new Menu Item</h2>
+<div style = "align:center; text-align:center;">
+  <form action = "{{url_for('addNewMenuItem', restaurant_id = restaurant_id)}}"
+    method = 'post'>
 
-<form action = "{{url_for('addNewMenuItem', restaurant_id = restaurant_id)}}"
-  method = 'post'>
-
-  <p> Name:</p>
-  <input type = 'text' size = '30' name = 'name'>
-  <p> Price:</p>
-  <input type = 'text' size = '30' name = 'price'>
-  <p>Decription:</p>
-  <input type = 'text' size ='50' name = 'description'>
-
-  <input type = 'submit' value = 'Create'>
-</form>
+    <p> Name:</p>
+    <input type = 'text' size = '30' name = 'name'>
+    <p> Price:</p>
+    <input type = 'text' size = '30' name = 'price'>
+    <p>Decription:</p>
+    <input type = 'text' size ='50' name = 'description'></br>
+    <input type = 'submit' value = 'Create'></br>
+    <a href = '{{url_for('restaurantMenu',restaurant_id = restaurant_id)}}'>Cancel and go back to menu</a>
+  </form>
+</div>
 </body>
 </html>

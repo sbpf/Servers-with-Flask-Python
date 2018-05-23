@@ -1,0 +1,28 @@
+body{
+  font-family: sans-serif;
+  background-color: #FCC807;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 10%;
+  border: 2px solid #eee;
+  border-radius: 25px;
+}
+
+h1,
+h2,
+h3,
+h4{
+  text-align: center;
+  color: #090A04;
+}
+
+h1{
+  text-align: center;
+  border-bottom: 2px solid #eee;
+}
+
+p,
+input{
+  align:center;
+  text-align: center;
+}
